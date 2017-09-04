@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UnityARKitPlugin/ARKitRemote/ARKITREMOTE.txt">
+    <Files>
+      <File FileName="Assets/UnityARKitPlugin/ARKitRemote/ARKITREMOTE.txt" Line="7" Column="61" />
+      <File FileName="Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/NativeInterface/ARHitTestResult.cs" Line="39" Column="2" />
+      <File FileName="Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/NativeInterface/UnityARSessionNativeInterface.cs" Line="237" Column="44" />
+      <File FileName="Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/UnityARHitTestExample.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/nirvan/Codes/paperToss/papertoss/Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/UnityARHitTestExample.cs" line="42" column="1" />
+      <Breakpoint file="/Users/nirvan/Codes/paperToss/papertoss/Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/UnityARHitTestExample.cs" line="14" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
