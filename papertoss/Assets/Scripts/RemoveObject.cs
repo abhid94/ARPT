@@ -5,7 +5,7 @@ using UnityEngine;
 public class RemoveObject : MonoBehaviour {
 
     public GameObject gameObject; 
-
+	public int removeHeight;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +13,7 @@ public class RemoveObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (gameObject.transform.position.y < -10)
+		if (gameObject.transform.position.y < removeHeight)
         {
             Destroy(gameObject); 
         }

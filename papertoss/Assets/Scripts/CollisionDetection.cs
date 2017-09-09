@@ -10,25 +10,26 @@ public class CollisionDetection : MonoBehaviour
     void Start()
     {
         scoreText = GameObject.Find("scoreUI").GetComponent<Text>();
+		scoreText.text = "0";
 
     }
 
     void OnCollisionEnter(Collision collisionInfo)
     {
-        print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
-        print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
-        print("Their relative velocity is " + collisionInfo.relativeVelocity);
+        //print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
+        //print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
+        //print("Their relative velocity is " + collisionInfo.relativeVelocity);
         keepScore();
     }
 
     void OnCollisionStay(Collision collisionInfo)
     {
-        print(gameObject.name + " and " + collisionInfo.collider.name + " are still colliding");
+        //print(gameObject.name + " and " + collisionInfo.collider.name + " are still colliding");
     }
 
     void OnCollisionExit(Collision collisionInfo)
     {
-        print(gameObject.name + " and " + collisionInfo.collider.name + " are no longer colliding");
+        //print(gameObject.name + " and " + collisionInfo.collider.name + " are no longer colliding");
     }
 
     void keepScore() {
@@ -36,7 +37,7 @@ public class CollisionDetection : MonoBehaviour
 
         scoreText.text = x.ToString();
        
-        print(x);
+        //print(x);
 
     }
 }
