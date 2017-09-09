@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CollisionDetection : MonoBehaviour 
 {
-
+    public Text scoreText; 
     public int x = 0;
+
+    void Start()
+    {
+        scoreText = GameObject.Find("scoreUI").GetComponent<Text>();
+
+    }
 
     void OnCollisionEnter(Collision collisionInfo)
     {
@@ -26,6 +33,10 @@ public class CollisionDetection : MonoBehaviour
 
     void keepScore() {
         x = x + 1;
+
+        scoreText.text = x.ToString();
+       
         print(x);
+
     }
 }
