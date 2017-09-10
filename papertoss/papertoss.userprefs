@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RemoveObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CollisionDetection.cs">
     <Files>
-      <File FileName="Assets/Scripts/RemoveObject.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/parabolicProjectile.cs" Line="41" Column="48" />
-      <File FileName="Assets/Scripts/ProjectileShooter.cs" Line="20" Column="60" />
-      <File FileName="Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/UnityARGeneratePlane.cs" Line="4" Column="29" />
-      <File FileName="Assets/Scripts/CollisionDetection.cs" Line="17" Column="6" />
+      <File FileName="Assets/Scripts/PlaceBin.cs" Line="33" Column="29" />
+      <File FileName="Assets/Scripts/CollisionDetection.cs" Line="18" Column="3" />
+      <File FileName="Assets/Scripts/ProjectileShooter.cs" Line="29" Column="64" />
+      <File FileName="Assets/Scripts/RemoveObject.cs" Line="16" Column="53" />
+      <File FileName="Assets/UnityARKitPlugin/Plugins/iOS/UnityARKit/UnityARGeneratePlane.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

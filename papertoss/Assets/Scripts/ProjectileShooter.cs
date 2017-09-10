@@ -7,13 +7,25 @@ public class ProjectileShooter : MonoBehaviour {
     // Use this for initialization
     public GameObject prefab;
 	public GameObject prefabBin;
+	public GameObject bin;
     public Transform Target;
     public float firingAngle = 45.0f;
 	public int firingVelocity = 20;
     public float gravity = 9.8f;
+	public bool forTouch;
 
 	void Start(){
-		GameObject bin = Instantiate (prefabBin) as GameObject;
+		if(forTouch){
+			bin = Instantiate (prefabBin) as GameObject;
+		}
+	}
+
+	public void createBin(){
+		print ("into create bin");
+		Destroy (bin);
+		print ("old bin deleted");
+		bin = Instantiate (prefabBin) as GameObject;
+		print ("inst new bin");
 	}
 
     // Update is called once per frame
@@ -24,7 +36,7 @@ public class ProjectileShooter : MonoBehaviour {
         if (SwipeManager.Instance.IsSwiping(SwipeDirection.Up))
         {
             GameObject projectile = Instantiate(prefab) as GameObject;
-            projectile.transform.position = transform.position + Camera.main.transform.forward * 2;
+			projectile.transform.position = transform.position;// + Camera.main.transform.forward * 2;
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
 			rb.velocity = Camera.main.transform.forward * firingVelocity;
         }

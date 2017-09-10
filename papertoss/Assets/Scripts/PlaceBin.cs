@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UnityEngine.XR.iOS
 {
@@ -10,10 +11,18 @@ namespace UnityEngine.XR.iOS
 		public bool binPlaced = false;
 		public Renderer rend;
 
+		//public Button resetBinButton;
+
 		void Start()
 		{
 			rend = GetComponent<Renderer>();
 			rend.enabled = false;
+		}
+
+		public void TaskOnClick(){
+
+			print("button pressed");
+			binPlaced = false;
 		}
 
 		private bool IsPointerOverUIObject(Touch currTouch) {
@@ -30,7 +39,7 @@ namespace UnityEngine.XR.iOS
 			List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface ().HitTest (point, resultTypes);
 			if (hitResults.Count > 0) {
 				foreach (var hitResult in hitResults) {
-					Debug.Log ("Got hit!");
+					print ("Got hit!");
 					m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
 					m_HitTransform.rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform);
 					Debug.Log (string.Format ("x:{0:0.######} y:{1:0.######} z:{2:0.######}", m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
@@ -44,14 +53,18 @@ namespace UnityEngine.XR.iOS
 
 		// Update is called once per frame
 		void Update () {
+			
 			if (Input.touchCount > 0 && m_HitTransform != null && !binPlaced)
+			//if (m_HitTransform != null && !binPlaced)
 			{
-				
+				print ("bin placed false after touch");
 				var touch = Input.GetTouch(0);
 				if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
 				{
 					//if( IsPointerOverUIObject(touch) ){
 					var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
+					print (screenPosition);
+					print ("screen position");
 					ARPoint point = new ARPoint {
 						x = screenPosition.x,
 						y = screenPosition.y
