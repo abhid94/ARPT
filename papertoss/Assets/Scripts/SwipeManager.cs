@@ -1,7 +1,6 @@
 ﻿using UnityEngine; 
 using System.Collections;
 
-
 public enum SwipeDirection
 {
     None = 0,
@@ -16,12 +15,12 @@ public class SwipeManager : MonoBehaviour
 { 
     private static SwipeManager instance;
     public static SwipeManager Instance{get{return instance;}}
-     
     public SwipeDirection Direction{set;get;}
 
     private Vector3 touchPosition;
     private float swipeResistenceX = 50.0f;
-    private float swipeResistenceY = 100.0f;
+    private float swipeResistenceY = 50.0f;
+    Vector2 deltaSwipe;
 
     private void Start()
     {
@@ -39,7 +38,7 @@ public class SwipeManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            Vector2 deltaSwipe = touchPosition - Input.mousePosition;
+            deltaSwipe = touchPosition - Input.mousePosition;
 
             if (Mathf.Abs(deltaSwipe.x) > swipeResistenceX)
             {
@@ -50,7 +49,7 @@ public class SwipeManager : MonoBehaviour
             if (Mathf.Abs(deltaSwipe.y) > swipeResistenceY)
             {
                 Direction |= (deltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;  
-                //Swipe Y
+                SwipeDistance();
             }
         }
     }
@@ -58,5 +57,10 @@ public class SwipeManager : MonoBehaviour
     public bool IsSwiping(SwipeDirection dir)
     {
         return (Direction & dir) == dir;
+    }﻿
+
+    public double SwipeDistance()
+    {
+        return Mathf.Abs(deltaSwipe.y);
     }﻿
 }

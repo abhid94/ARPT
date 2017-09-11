@@ -10,9 +10,10 @@ public class ProjectileShooter : MonoBehaviour {
 	public GameObject bin;
     public Transform Target;
     public float firingAngle = 45.0f;
-	public int firingVelocity = 20;
+	public int firingVelocity;
     public float gravity = 9.8f;
 	public bool forTouch;
+    private double swipeDistance = 0;
 
 	void Start(){
 		if(forTouch){
@@ -30,15 +31,18 @@ public class ProjectileShooter : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
-
-
+        
         if (SwipeManager.Instance.IsSwiping(SwipeDirection.Up))
         {
             GameObject projectile = Instantiate(prefab) as GameObject;
 			projectile.transform.position = transform.position;// + Camera.main.transform.forward * 2;
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
-			rb.velocity = Camera.main.transform.forward * firingVelocity;
+
+
+            swipeDistance = SwipeManager.Instance.SwipeDistance();
+            firingVelocity = (int)swipeDistance;
+			rb.velocity = Camera.main.transform.forward * firingVelocity/10;
+
         }
     }
 }

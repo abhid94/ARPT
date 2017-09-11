@@ -35,11 +35,17 @@ void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_IMGUI();
 	RegisterModule_IMGUI();
 
+	void RegisterModule_GameCenter();
+	RegisterModule_GameCenter();
+
 	void RegisterModule_UnityWebRequest();
 	RegisterModule_UnityWebRequest();
 
 	void RegisterModule_JSONSerialize();
 	RegisterModule_JSONSerialize();
+
+	void RegisterModule_ImageConversion();
+	RegisterModule_ImageConversion();
 
 }
 
@@ -102,10 +108,11 @@ class LightProbeProxyVolume;
 class MonoBehaviour; template <> void RegisterClass<MonoBehaviour>();
 class NavMeshAgent; 
 class NavMeshObstacle; 
-class NetworkView; 
+class NetworkView; template <> void RegisterClass<NetworkView>();
 class OffMeshLink; 
 class PhysicsUpdateBehaviour2D; 
 class ConstantForce2D; 
+class PlayableDirector; 
 class Projector; 
 class ReflectionProbe; 
 class Skybox; 
@@ -142,8 +149,9 @@ class BillboardRenderer;
 class LineRenderer; 
 class MeshRenderer; template <> void RegisterClass<MeshRenderer>();
 class ParticleRenderer; 
-class ParticleSystemRenderer; template <> void RegisterClass<ParticleSystemRenderer>();
+class ParticleSystemRenderer; 
 class SkinnedMeshRenderer; 
+class SpriteMask; 
 class SpriteRenderer; 
 class TrailRenderer; 
 class Rigidbody; template <> void RegisterClass<Rigidbody>();
@@ -158,6 +166,8 @@ class GameObject; template <> void RegisterClass<GameObject>();
 class NamedObject; template <> void RegisterClass<NamedObject>();
 class AssetBundle; 
 class AssetBundleManifest; 
+class ScriptedImporter; 
+class StyleSheetImporter; 
 class AudioMixer; 
 class AudioMixerController; 
 class AudioMixerGroup; 
@@ -170,6 +180,7 @@ class BillboardAsset;
 class ComputeShader; 
 class Flare; 
 namespace TextRendering { class Font; } template <> void RegisterClass<TextRendering::Font>();
+class GameObjectRecorder; 
 class LightProbes; template <> void RegisterClass<LightProbes>();
 class Material; template <> void RegisterClass<Material>();
 class ProceduralMaterial; 
@@ -191,6 +202,7 @@ class Shader; template <> void RegisterClass<Shader>();
 class ShaderVariantCollection; 
 class SpeedTreeWindAsset; 
 class Sprite; template <> void RegisterClass<Sprite>();
+class SpriteAtlas; 
 class SubstanceArchive; 
 class TerrainData; 
 class TextAsset; template <> void RegisterClass<TextAsset>();
@@ -234,7 +246,6 @@ class RuntimeInitializeOnLoadManager; template <> void RegisterClass<RuntimeInit
 class ScriptMapper; template <> void RegisterClass<ScriptMapper>();
 class TagManager; template <> void RegisterClass<TagManager>();
 class TimeManager; template <> void RegisterClass<TimeManager>();
-class UnityAdsManager; 
 class UnityAnalyticsManager; 
 class UnityConnectSettings; template <> void RegisterClass<UnityConnectSettings>();
 class LevelGameManager; template <> void RegisterClass<LevelGameManager>();
@@ -271,124 +282,124 @@ RegisterBuiltinTypes();
 	RegisterClass<NamedObject>();
 	//10. MonoBehaviour
 	RegisterClass<MonoBehaviour>();
-	//11. Shader
+	//11. NetworkView
+	RegisterClass<NetworkView>();
+	//12. Shader
 	RegisterClass<Shader>();
-	//12. Material
+	//13. Material
 	RegisterClass<Material>();
-	//13. Sprite
+	//14. Sprite
 	RegisterClass<Sprite>();
-	//14. Texture
+	//15. Texture
 	RegisterClass<Texture>();
-	//15. Texture2D
+	//16. Texture2D
 	RegisterClass<Texture2D>();
-	//16. RenderTexture
+	//17. RenderTexture
 	RegisterClass<RenderTexture>();
-	//17. Transform
+	//18. Transform
 	RegisterClass<Transform>();
-	//18. UI::RectTransform
+	//19. UI::RectTransform
 	RegisterClass<UI::RectTransform>();
-	//19. ParticleSystem
+	//20. ParticleSystem
 	RegisterClass<ParticleSystem>();
-	//20. Rigidbody
+	//21. Rigidbody
 	RegisterClass<Rigidbody>();
-	//21. Collider
+	//22. Collider
 	RegisterClass<Collider>();
-	//22. AudioClip
-	RegisterClass<AudioClip>();
-	//23. SampleClip
-	RegisterClass<SampleClip>();
-	//24. Animator
-	RegisterClass<Animator>();
-	//25. TextRendering::Font
-	RegisterClass<TextRendering::Font>();
-	//26. UI::Canvas
-	RegisterClass<UI::Canvas>();
-	//27. UI::CanvasGroup
-	RegisterClass<UI::CanvasGroup>();
-	//28. UI::CanvasRenderer
-	RegisterClass<UI::CanvasRenderer>();
-	//29. MeshRenderer
-	RegisterClass<MeshRenderer>();
-	//30. MeshCollider
-	RegisterClass<MeshCollider>();
-	//31. MeshFilter
-	RegisterClass<MeshFilter>();
-	//32. PreloadData
-	RegisterClass<PreloadData>();
-	//33. Cubemap
-	RegisterClass<Cubemap>();
-	//34. Texture3D
-	RegisterClass<Texture3D>();
-	//35. Texture2DArray
-	RegisterClass<Texture2DArray>();
-	//36. LowerResBlitTexture
-	RegisterClass<LowerResBlitTexture>();
-	//37. TimeManager
-	RegisterClass<TimeManager>();
-	//38. GlobalGameManager
-	RegisterClass<GlobalGameManager>();
-	//39. GameManager
-	RegisterClass<GameManager>();
-	//40. AudioManager
-	RegisterClass<AudioManager>();
-	//41. InputManager
-	RegisterClass<InputManager>();
-	//42. GraphicsSettings
-	RegisterClass<GraphicsSettings>();
-	//43. QualitySettings
-	RegisterClass<QualitySettings>();
-	//44. TextAsset
-	RegisterClass<TextAsset>();
-	//45. PhysicsManager
-	RegisterClass<PhysicsManager>();
-	//46. TagManager
-	RegisterClass<TagManager>();
-	//47. ScriptMapper
-	RegisterClass<ScriptMapper>();
-	//48. DelayedCallManager
-	RegisterClass<DelayedCallManager>();
-	//49. MonoScript
-	RegisterClass<MonoScript>();
-	//50. MonoManager
-	RegisterClass<MonoManager>();
-	//51. PlayerSettings
-	RegisterClass<PlayerSettings>();
-	//52. BuildSettings
-	RegisterClass<BuildSettings>();
-	//53. ResourceManager
-	RegisterClass<ResourceManager>();
-	//54. NetworkManager
-	RegisterClass<NetworkManager>();
-	//55. MasterServerInterface
-	RegisterClass<MasterServerInterface>();
-	//56. RuntimeInitializeOnLoadManager
-	RegisterClass<RuntimeInitializeOnLoadManager>();
-	//57. CloudWebServicesManager
-	RegisterClass<CloudWebServicesManager>();
-	//58. UnityConnectSettings
-	RegisterClass<UnityConnectSettings>();
-	//59. LevelGameManager
-	RegisterClass<LevelGameManager>();
-	//60. BoxCollider
+	//23. BoxCollider
 	RegisterClass<BoxCollider>();
-	//61. AudioListener
-	RegisterClass<AudioListener>();
-	//62. AudioBehaviour
-	RegisterClass<AudioBehaviour>();
+	//24. SphereCollider
+	RegisterClass<SphereCollider>();
+	//25. MeshCollider
+	RegisterClass<MeshCollider>();
+	//26. CapsuleCollider
+	RegisterClass<CapsuleCollider>();
+	//27. AudioClip
+	RegisterClass<AudioClip>();
+	//28. SampleClip
+	RegisterClass<SampleClip>();
+	//29. Animator
+	RegisterClass<Animator>();
+	//30. TextRendering::Font
+	RegisterClass<TextRendering::Font>();
+	//31. UI::Canvas
+	RegisterClass<UI::Canvas>();
+	//32. UI::CanvasGroup
+	RegisterClass<UI::CanvasGroup>();
+	//33. UI::CanvasRenderer
+	RegisterClass<UI::CanvasRenderer>();
+	//34. MeshFilter
+	RegisterClass<MeshFilter>();
+	//35. MeshRenderer
+	RegisterClass<MeshRenderer>();
+	//36. PreloadData
+	RegisterClass<PreloadData>();
+	//37. Cubemap
+	RegisterClass<Cubemap>();
+	//38. Texture3D
+	RegisterClass<Texture3D>();
+	//39. Texture2DArray
+	RegisterClass<Texture2DArray>();
+	//40. LowerResBlitTexture
+	RegisterClass<LowerResBlitTexture>();
+	//41. MonoScript
+	RegisterClass<MonoScript>();
+	//42. TextAsset
+	RegisterClass<TextAsset>();
+	//43. NetworkManager
+	RegisterClass<NetworkManager>();
+	//44. GlobalGameManager
+	RegisterClass<GlobalGameManager>();
+	//45. GameManager
+	RegisterClass<GameManager>();
+	//46. AudioManager
+	RegisterClass<AudioManager>();
+	//47. PhysicsManager
+	RegisterClass<PhysicsManager>();
+	//48. PlayerSettings
+	RegisterClass<PlayerSettings>();
+	//49. BuildSettings
+	RegisterClass<BuildSettings>();
+	//50. InputManager
+	RegisterClass<InputManager>();
+	//51. RuntimeInitializeOnLoadManager
+	RegisterClass<RuntimeInitializeOnLoadManager>();
+	//52. TimeManager
+	RegisterClass<TimeManager>();
+	//53. TagManager
+	RegisterClass<TagManager>();
+	//54. GraphicsSettings
+	RegisterClass<GraphicsSettings>();
+	//55. CloudWebServicesManager
+	RegisterClass<CloudWebServicesManager>();
+	//56. DelayedCallManager
+	RegisterClass<DelayedCallManager>();
+	//57. QualitySettings
+	RegisterClass<QualitySettings>();
+	//58. ResourceManager
+	RegisterClass<ResourceManager>();
+	//59. MonoManager
+	RegisterClass<MonoManager>();
+	//60. MasterServerInterface
+	RegisterClass<MasterServerInterface>();
+	//61. ScriptMapper
+	RegisterClass<ScriptMapper>();
+	//62. UnityConnectSettings
+	RegisterClass<UnityConnectSettings>();
 	//63. RenderSettings
 	RegisterClass<RenderSettings>();
-	//64. FlareLayer
-	RegisterClass<FlareLayer>();
-	//65. PhysicMaterial
-	RegisterClass<PhysicMaterial>();
-	//66. SphereCollider
-	RegisterClass<SphereCollider>();
-	//67. CapsuleCollider
-	RegisterClass<CapsuleCollider>();
-	//68. LightmapSettings
+	//64. LevelGameManager
+	RegisterClass<LevelGameManager>();
+	//65. LightmapSettings
 	RegisterClass<LightmapSettings>();
-	//69. ParticleSystemRenderer
-	RegisterClass<ParticleSystemRenderer>();
+	//66. AudioBehaviour
+	RegisterClass<AudioBehaviour>();
+	//67. AudioListener
+	RegisterClass<AudioListener>();
+	//68. FlareLayer
+	RegisterClass<FlareLayer>();
+	//69. PhysicMaterial
+	RegisterClass<PhysicMaterial>();
 	//70. LightProbes
 	RegisterClass<LightProbes>();
 

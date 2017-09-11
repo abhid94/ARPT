@@ -2,11 +2,11 @@
 <assembly fullname="Assembly-CSharp">
 <type fullname="ButtonClick" preserve="all"/>
 <type fullname="CollisionDetection" preserve="all"/>
+<type fullname="parabolicProjectile" preserve="all"/>
 <type fullname="UnityEngine.XR.iOS.PlaceBin" preserve="all"/>
 <type fullname="ProjectileShooter" preserve="all"/>
 <type fullname="RemoveObject" preserve="all"/>
 <type fullname="SwipeManager" preserve="all"/>
-<type fullname="parabolicProjectile" preserve="all"/>
 <type fullname="UnityEngine.XR.iOS.ConnectToEditor" preserve="all"/>
 <type fullname="UnityEngine.XR.iOS.UnityRemoteVideo" preserve="all"/>
 <type fullname="UnityARUserAnchorExample" preserve="all"/>
