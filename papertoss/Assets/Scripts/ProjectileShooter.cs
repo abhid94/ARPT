@@ -10,15 +10,19 @@ public class ProjectileShooter : MonoBehaviour {
 	public GameObject bin;
     public Transform Target;
     public float firingAngle = 45.0f;
-	public int firingVelocity;
+    private int firingVelocity;
     public float gravity = 9.8f;
 	public bool forTouch;
     private double swipeDistance = 0;
+    private GameObject projectile;
+    private bool throwInMotion = false;
+    private float currFire = 0;
 
 	void Start(){
 		if(forTouch){
 			bin = Instantiate (prefabBin) as GameObject;
 		}
+        projectile = Instantiate(prefab) as GameObject;
 	}
 
 	public void createBin(){
@@ -30,16 +34,24 @@ public class ProjectileShooter : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         
+        if(!throwInMotion){
+            projectile.transform.position = transform.position + Camera.main.transform.forward/3 + Camera.main.transform.up/-15 ;
+        } else if (Time.time > currFire + 2) {
+            throwInMotion = false;
+            projectile = Instantiate(prefab,transform.position, transform.rotation) as GameObject;
+        }
+           
         if (SwipeManager.Instance.IsSwiping(SwipeDirection.Up))
         {
-            GameObject projectile = Instantiate(prefab) as GameObject;
+            //GameObject projectile = Instantiate(prefab) as GameObject;
+            throwInMotion = true;
+            currFire = Time.time;
 			projectile.transform.position = transform.position;// + Camera.main.transform.forward * 2;
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
-
             swipeDistance = SwipeManager.Instance.SwipeDistance();
             firingVelocity = (int)swipeDistance;
-			rb.velocity = Camera.main.transform.forward * firingVelocity/10;
+            rb.velocity = Camera.main.transform.forward * firingVelocity/20 + Camera.main.transform.up * firingVelocity/50 ;
 
         }
     }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/UnityARKitPlugin/UnityARShadows.unity
+- path: Assets/UnityARKitPlugin/ARKitRemote/EditorTestScene.unity
   isLoaded: 1
   isActive: 1

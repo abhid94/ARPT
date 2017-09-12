@@ -5,11 +5,12 @@ using UnityEngine;
 public class RemoveObject : MonoBehaviour {
 
     public GameObject gameObject; 
-	public GameObject currentBin;
+    private GameObject currentBin;
+    private CollisionDetection score;
 	public double removeHeight;
 	// Use this for initialization
 	void Start () {
-		currentBin = GameObject.Find("BasketWithSphere").GetComponent<GameObject>();
+        currentBin = GameObject.Find("Sphere");
 		//removeHeight = currentBin.transform.position.y - 0.5;
 	}
 	
@@ -18,6 +19,8 @@ public class RemoveObject : MonoBehaviour {
 		
 		if (gameObject.transform.position.y < removeHeight)
         {
+            CollisionDetection collisionScript = currentBin.GetComponent<CollisionDetection>();
+            collisionScript.score = 0;
             Destroy(gameObject); 
         }
 	}

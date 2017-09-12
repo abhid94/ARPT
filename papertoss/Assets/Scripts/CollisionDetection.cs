@@ -7,7 +7,7 @@ public class CollisionDetection : MonoBehaviour
     private Text scoreText;
     private Text highScoreText;
     private Text multiplyerText;
-    private float score = 1;
+    public float score = 0;
     public float highScore = 0;
     private float distanceFromBin = 0;
 
@@ -32,6 +32,7 @@ public class CollisionDetection : MonoBehaviour
         float cameraPos = GameObject.Find("Main Camera").transform.position.z;
         distanceFromBin =  Mathf.Abs(binPos - cameraPos);
         multiplyerText.text = distanceFromBin.ToString("0.00");
+        scoreText.text = score.ToString("0.0");
     }
         
     void OnCollisionEnter(Collision collisionInfo)
@@ -61,7 +62,6 @@ public class CollisionDetection : MonoBehaviour
     void keepScore() {
         
         score = score + distanceFromBin;
-        scoreText.text = score.ToString("0.0");
 
         if (score >= highScore)
         {
