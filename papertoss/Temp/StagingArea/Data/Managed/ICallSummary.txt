@@ -485,7 +485,7 @@ UnityEngine.PlayerConnectionInternal::IsConnected
 UnityEngine.PlayerConnectionInternal::DisconnectAll
 UnityEngine.PlayerConnectionInternal::RegisterInternal
 UnityEngine.PlayerConnectionInternal::SendMessage
-UnityEngine.PlayerPrefs::TrySetInt
+UnityEngine.PlayerPrefs::TrySetFloat
 UnityEngine.PlayerPrefs::GetInt
 UnityEngine.Quaternion::INTERNAL_CALL_Internal_FromEulerRad
 UnityEngine.Quaternion::INTERNAL_CALL_Inverse

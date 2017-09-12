@@ -13335,9 +13335,9 @@ Summary:
         GetString(System.String,System.String)
         HasKey(System.String)
         Save()
-        SetFloat(System.String,System.Single)
+        SetInt(System.String,System.Int32)
         SetString(System.String,System.String)
-        TrySetFloat(System.String,System.Single)
+        TrySetInt(System.String,System.Int32)
         TrySetSetString(System.String,System.String)
     UnityEngine.PlayMode
     UnityEngine.PointEffector2D

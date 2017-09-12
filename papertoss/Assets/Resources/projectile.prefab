@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23939683456817382}
   - component: {fileID: 54349048169147500}
   - component: {fileID: 114392771452434114}
+  - component: {fileID: 114711938077663182}
   m_Layer: 0
   m_Name: projectile
   m_TagString: Untagged
@@ -112,6 +113,18 @@ MonoBehaviour:
   gameObject: {fileID: 1686604183129546}
   currentBin: {fileID: 0}
   removeHeight: -1.5
+--- !u!114 &114711938077663182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686604183129546}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7976ce810b74719866ba174a97e1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScore: 0
 --- !u!135 &135929227825492022
 SphereCollider:
   m_ObjectHideFlags: 1

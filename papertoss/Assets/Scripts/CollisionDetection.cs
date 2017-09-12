@@ -5,28 +5,33 @@ using System.Collections;
 public class CollisionDetection : MonoBehaviour 
 {
     private Text scoreText;
-    private Text highScoreText; 
-    public int score = 0;
-    public int highScore = 0;
-    private int prevScore = 0;
+    private Text highScoreText;
+    private Text multiplyerText;
+    private float score = 1;
+    public float highScore = 0;
+    private float distanceFromBin = 0;
 
     void Start()
     {
         scoreText = GameObject.Find("ScoreUI").GetComponent<Text>();
         highScoreText = GameObject.Find("HighScoreUI").GetComponent<Text>();
+        multiplyerText = GameObject.Find("MultiplyerUI").GetComponent<Text>();
 		scoreText.text = "0";
-        highScoreText.text = PlayerPrefs.GetInt("highScore").ToString();
+        highScoreText.text = PlayerPrefs.GetFloat("highScore").ToString("0.0");
 
-        if (highScore < 1)
+        if (highScore == 0)
         {
-            highScore = PlayerPrefs.GetInt("highScore", 0);
+            highScore = PlayerPrefs.GetFloat("highScore", 0);
         }
 
     }
 
     void Update()
     {
-        prevScore = score; 
+        float binPos = GameObject.Find("BasketWithSphere").transform.position.z;
+        float cameraPos = GameObject.Find("Main Camera").transform.position.z;
+        distanceFromBin =  Mathf.Abs(binPos - cameraPos);
+        multiplyerText.text = distanceFromBin.ToString("0.00");
     }
         
     void OnCollisionEnter(Collision collisionInfo)
@@ -55,13 +60,13 @@ public class CollisionDetection : MonoBehaviour
 
     void keepScore() {
         
-        score = score + 1;
-        scoreText.text = score.ToString();
+        score = score + distanceFromBin;
+        scoreText.text = score.ToString("0.0");
 
         if (score >= highScore)
         {
-            PlayerPrefs.SetInt("highScore", score);
-            highScoreText.text = score.ToString();
+            PlayerPrefs.SetFloat("highScore", score);
+            highScoreText.text = score.ToString("0.0");
         }
 
     }

@@ -141,6 +141,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 48b4f2bb90cadfa8931f7d8baac4245e Assembly-CSharp.dll:.ColorSlider
 48aac773de77753c007e6b8e5fa95d61 Assembly-CSharp.dll:.ColorPresets
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SwipeManager
-167dde5ee9c6d8f6c3c6af397a58939b Assembly-CSharp.dll:.CollisionDetection
+36d4a25b476688504fecda72d7530ed6 Assembly-CSharp.dll:.CollisionDetection
 391d84b859f3b155fe38f54bfce79162 Assembly-CSharp.dll:.UnityPointCloudExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnityARCameraNearFar

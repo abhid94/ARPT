@@ -22,11 +22,9 @@ public class ProjectileShooter : MonoBehaviour {
 	}
 
 	public void createBin(){
-		print ("into create bin");
 		Destroy (bin);
-		print ("old bin deleted");
 		bin = Instantiate (prefabBin) as GameObject;
-		print ("inst new bin");
+
 	}
 
     // Update is called once per frame
