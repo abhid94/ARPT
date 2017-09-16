@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c3b51f0e6efee46c9bbf2a80f89cf7a8
+timeCreated: 1505121129
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Black Ops One
+  fontNames:
+  - Black Ops One
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
