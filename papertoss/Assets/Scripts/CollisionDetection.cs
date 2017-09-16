@@ -28,7 +28,7 @@ public class CollisionDetection : MonoBehaviour
 
     void Update()
     {
-        float binPos = GameObject.Find("BasketWithSphere").transform.position.z;
+		float binPos = GameObject.Find("BasketWithSphere(Clone)").transform.position.z;
         float cameraPos = GameObject.Find("Main Camera").transform.position.z;
         distanceFromBin =  Mathf.Abs(binPos - cameraPos);
         multiplyerText.text = distanceFromBin.ToString("0.00");

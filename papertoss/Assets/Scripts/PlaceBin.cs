@@ -11,6 +11,7 @@ namespace UnityEngine.XR.iOS
 		public bool binPlaced = false;
 		public Renderer rend;
 
+
 		//public Button resetBinButton;
 
 		void Start()
@@ -45,6 +46,7 @@ namespace UnityEngine.XR.iOS
 					Debug.Log (string.Format ("x:{0:0.######} y:{1:0.######} z:{2:0.######}", m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
 					rend.enabled = true;
 					binPlaced = true;
+
 					return true;
 				}
 			}
@@ -58,6 +60,7 @@ namespace UnityEngine.XR.iOS
 			//if (m_HitTransform != null && !binPlaced)
 			{
 				print ("bin placed false after touch");
+			
 				var touch = Input.GetTouch(0);
 				if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
 				{

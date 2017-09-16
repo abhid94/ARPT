@@ -1,0 +1,9 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="ProjectileShooter">
+			<method name="createBin"/>
+			<method name="createBin"/>
+			<method name="gameBegin"/>
+		</type>
+	</assembly>
+</linker>
