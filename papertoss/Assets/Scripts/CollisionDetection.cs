@@ -61,7 +61,7 @@ public class CollisionDetection : MonoBehaviour
 
     void keepScore() {
         
-        score = score + distanceFromBin;
+		score = score + Mathf.Exp(distanceFromBin);
 
         if (score >= highScore)
         {
