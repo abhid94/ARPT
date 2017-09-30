@@ -16,12 +16,12 @@ public class CollisionDetection : MonoBehaviour
         scoreText = GameObject.Find("ScoreUI").GetComponent<Text>();
         highScoreText = GameObject.Find("HighScoreUI").GetComponent<Text>();
         multiplyerText = GameObject.Find("MultiplyerUI").GetComponent<Text>();
-		scoreText.text = "0";
-        highScoreText.text = PlayerPrefs.GetFloat("highScore").ToString("0.0");
+		scoreText.text = score.ToString("0");
+        highScoreText.text = PlayerPrefs.GetFloat("highScore").ToString("0");
 
         if (highScore == 0)
         {
-            highScore = PlayerPrefs.GetFloat("highScore", 0);
+			highScoreText.text = "0";
         }
 
     }
@@ -32,7 +32,8 @@ public class CollisionDetection : MonoBehaviour
         float cameraPos = GameObject.Find("Main Camera").transform.position.z;
         distanceFromBin =  Mathf.Abs(binPos - cameraPos);
         multiplyerText.text = distanceFromBin.ToString("0.00");
-        scoreText.text = score.ToString("0.0");
+        scoreText.text = score.ToString("0");
+		highScoreText.text = PlayerPrefs.GetFloat("highScore").ToString("0");
     }
         
     void OnCollisionEnter(Collision collisionInfo)
@@ -61,12 +62,15 @@ public class CollisionDetection : MonoBehaviour
 
     void keepScore() {
         
+		AudioSource audio = GetComponent<AudioSource>();
+		audio.Play();
+
 		score = score + Mathf.Exp(distanceFromBin);
 
-        if (score >= highScore)
+		if (score >= PlayerPrefs.GetFloat("highScore"))
         {
             PlayerPrefs.SetFloat("highScore", score);
-            highScoreText.text = score.ToString("0.0");
+            //highScoreText.text = score.ToString("0");
         }
 
     }
